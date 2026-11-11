@@ -1,0 +1,408 @@
+[gd_scene format=3 uid="uid://dqthru4nwxssn"]
+
+[ext_resource type="Script" uid="uid://thlx8604lnml" path="res://scenes/ui/menu.gd" id="1_lti8b"]
+[ext_resource type="Theme" uid="uid://dipy5bsiebjqs" path="res://resources/menu_button.tres" id="2_ouk20"]
+[ext_resource type="Script" uid="uid://bkcnxmbg10j6c" path="res://scenes/ui/run_history.gd" id="3_mae5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 30.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Menu" type="CanvasLayer" unique_id=1192830433]
+follow_viewport_enabled = true
+script = ExtResource("1_lti8b")
+
+[node name="DimBG" type="ColorRect" parent="." unique_id=1123136157]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="RunHistory" type="MarginContainer" parent="." unique_id=1831420268]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 210
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 120
+script = ExtResource("3_mae5d")
+
+[node name="RunHistorySorting" type="VBoxContainer" parent="RunHistory" unique_id=1738411679]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="RunHistory/RunHistorySorting" unique_id=1769784807]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Close"
+
+[node name="RunHistoryBG" type="PanelContainer" parent="RunHistory/RunHistorySorting" unique_id=1832876778]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RunHistory/RunHistorySorting/RunHistoryBG" unique_id=1210770646]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HistScroll" type="ScrollContainer" parent="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer" unique_id=1145369435]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.8
+
+[node name="HistGrid" type="GridContainer" parent="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer/HistScroll" unique_id=1238952911]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/h_separation = 40
+columns = 6
+
+[node name="ClearHistory" type="Button" parent="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer" unique_id=462889681]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+text = "Clear History"
+
+[node name="Credits" type="VBoxContainer" parent="." unique_id=624210788]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.5
+offset_top = -152.5
+offset_right = 457.5
+offset_bottom = 152.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="Credits" unique_id=1454463422]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Close"
+
+[node name="CreditsBG" type="PanelContainer" parent="Credits" unique_id=1158651291]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
+
+[node name="Label" type="Label" parent="Credits/CreditsBG" unique_id=1946741727]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Created by camilles-corner.itch.io
+Background Music:
+\"Long Stroll\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+https://creativecommons.org/licenses/by/4.0/
+Audio Assets:
+\"Bright button click 3\", Produced by ZapSplat - https://www.zapsplat.com/music/bright-button-click-3/
+\"Cat meow, hungry\", Produced by Blastwave FX - https://www.zapsplat.com/music/cat-meow-hungry/
+\"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
+\"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
+
+[node name="HowTo" type="VBoxContainer" parent="." unique_id=820304819]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.5
+offset_top = -259.0
+offset_right = 397.5
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="HowTo" unique_id=397566798]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Close"
+
+[node name="TextBG" type="PanelContainer" parent="HowTo" unique_id=29795059]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
+
+[node name="Label" type="Label" parent="HowTo/TextBG" unique_id=2071235110]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Welcome to one short day in the life of Jo, a perfectly average person working as an analyst at a perfectly average company. Over the course of three phases you'll decide what Jo does with her time by selecting tasks for her to complete. Hover over tasks to see a short description, and click on tasks to complete them, but be careful what you prioritize! Jo only has a set amount of time in her day, which you can see counting down in the top left corner of the screen. It is up to you what her day looks like - will you conquer the office and end the day triumphant, or will you crash and burn in poor Jo's shoes?"
+autowrap_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="." unique_id=138740382]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.5
+offset_top = -259.0
+offset_right = 397.5
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="Settings" unique_id=527880765]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Close"
+
+[node name="TextBG" type="PanelContainer" parent="Settings" unique_id=1124940535]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/TextBG" unique_id=1769529423]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Settings/TextBG/VBoxContainer" unique_id=112774506]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b]SETTINGS[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="AudioSettings" type="RichTextLabel" parent="Settings/TextBG/VBoxContainer" unique_id=80613843]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "AUDIO VOLUME"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Music" type="HBoxContainer" parent="Settings/TextBG/VBoxContainer" unique_id=1766980392]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/TextBG/VBoxContainer/Music" unique_id=8193625]
+custom_maximum_size = Vector2(120, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Music: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MusicVolume" type="HSlider" parent="Settings/TextBG/VBoxContainer/Music" unique_id=1957513314]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+theme = ExtResource("2_ouk20")
+max_value = 3.0
+step = 0.01
+value = 1.0
+
+[node name="Sounds" type="HBoxContainer" parent="Settings/TextBG/VBoxContainer" unique_id=1946194523]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/TextBG/VBoxContainer/Sounds" unique_id=99249786]
+custom_maximum_size = Vector2(120, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Sounds: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SoundsVolume" type="HSlider" parent="Settings/TextBG/VBoxContainer/Sounds" unique_id=1647936550]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+theme = ExtResource("2_ouk20")
+max_value = 3.0
+step = 0.01
+value = 1.0
+
+[node name="Accessibility" type="RichTextLabel" parent="Settings/TextBG/VBoxContainer" unique_id=1354806856]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "ACCESSIBILITY"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Color" type="HBoxContainer" parent="Settings/TextBG/VBoxContainer" unique_id=1441563439]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/TextBG/VBoxContainer/Color" unique_id=2009727606]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Blue Colorblind Friendly: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorAccessibility" type="CheckButton" parent="Settings/TextBG/VBoxContainer/Color" unique_id=1028309092]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_ouk20")
+
+[node name="MenuControl" type="VBoxContainer" parent="." unique_id=31572163]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 179.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Menu" type="Button" parent="MenuControl" unique_id=1604634769]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Menu"
+
+[node name="MenuList" type="VBoxContainer" parent="MenuControl" unique_id=794847343]
+visible = false
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Settings" type="Button" parent="MenuControl/MenuList" unique_id=1787119575]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="HowTo" type="Button" parent="MenuControl/MenuList" unique_id=706626614]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "How To"
+
+[node name="History" type="Button" parent="MenuControl/MenuList" unique_id=53574238]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Game History"
+
+[node name="Credits" type="Button" parent="MenuControl/MenuList" unique_id=1503253874]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+
+[node name="Restart" type="Button" parent="MenuControl/MenuList" unique_id=716019636]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="Title" type="Button" parent="MenuControl/MenuList" unique_id=1006087139]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Title"
+
+[node name="Exit" type="Button" parent="MenuControl/MenuList" unique_id=1550480109]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+text = "Exit"
+
+[connection signal="pressed" from="RunHistory/RunHistorySorting/Close" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer/ClearHistory" to="." method="_on_clear_history_pressed"]
+[connection signal="pressed" from="Credits/Close" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="HowTo/Close" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="Settings/Close" to="." method="_on_settings_pressed"]
+[connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Music/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Sounds/SoundsVolume" to="." method="_on_sounds_volume_value_changed"]
+[connection signal="toggled" from="Settings/TextBG/VBoxContainer/Color/ColorAccessibility" to="." method="_on_color_accessibility_toggled"]
+[connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/HowTo" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/History" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Exit" to="." method="_on_exit_pressed"]

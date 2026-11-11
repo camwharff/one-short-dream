@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bcsv3e4ovrxru"]
+
+[ext_resource type="Script" uid="uid://hw4ir5pakhbo" path="res://scenes/phase.gd" id="1_74v7r"]
+
+[node name="Phase" type="Node" unique_id=1685379031]
+script = ExtResource("1_74v7r")

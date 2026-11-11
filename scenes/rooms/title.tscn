@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cu2siuum2jlef"]
+
+[ext_resource type="Texture2D" uid="uid://dvd7cqum686d5" path="res://assets/Title page.png" id="1_kpexm"]
+[ext_resource type="Script" uid="uid://du7y4n65fsvvl" path="res://scenes/rooms/title.gd" id="1_yo48d"]
+[ext_resource type="Texture2D" uid="uid://b013nmvsefhf8" path="res://assets/start button.png" id="2_3xoar"]
+[ext_resource type="Theme" uid="uid://cd28cejhwjqxe" path="res://resources/hud_style.tres" id="4_mom7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g61v0"]
+size = Vector2(740, 198)
+
+[node name="Title" type="Node2D" unique_id=1068749284]
+script = ExtResource("1_yo48d")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2043512267]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kpexm")
+
+[node name="StartButton" type="Area2D" parent="." unique_id=2050105803]
+
+[node name="Sprite2D" type="Sprite2D" parent="StartButton" unique_id=1961112547]
+position = Vector2(729, 410)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3xoar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton" unique_id=1507043150]
+visible = false
+position = Vector2(729, 346)
+shape = SubResource("RectangleShape2D_g61v0")
+
+[node name="HoverLabel" type="Label" parent="." unique_id=1400755050]
+visible = false
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 227.0
+offset_bottom = 84.0
+theme = ExtResource("4_mom7w")
+text = "Click to Start"
+
+[connection signal="input_event" from="StartButton" to="." method="_on_input_event"]

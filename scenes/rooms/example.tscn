@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://btw2q168uxdwv"]
+
+[ext_resource type="Texture2D" uid="uid://d3krhh6iigwra" path="res://assets/breakroom/background.png" id="1_dgceo"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://scenes/ui/task.tscn" id="1_e4rg8"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://scenes/ui/portal.tscn" id="2_xbi64"]
+[ext_resource type="Texture2D" uid="uid://dcpyjsk6ngdnb" path="res://assets/breakroom/vending.png" id="3_0bajx"]
+[ext_resource type="Texture2D" uid="uid://dd06f0cd1lv4k" path="res://assets/breakroom/chair.png" id="3_2sest"]
+[ext_resource type="Texture2D" uid="uid://de3nwj86ctk5c" path="res://assets/breakroom/coffee.png" id="4_u2sgn"]
+[ext_resource type="Texture2D" uid="uid://cvmmadbph1eq6" path="res://assets/breakroom/overlay.png" id="6_b13k2"]
+[ext_resource type="Texture2D" uid="uid://0sxfcc2kqaa" path="res://assets/breakroom/fridge.png" id="6_w60y4"]
+[ext_resource type="Texture2D" uid="uid://d05yg3ekesrn5" path="res://assets/breakroom/microwave.png" id="7_02olu"]
+[ext_resource type="Texture2D" uid="uid://cospybacjj03y" path="res://assets/breakroom/water.png" id="8_dhow4"]
+[ext_resource type="Texture2D" uid="uid://cee8s6x867nlo" path="res://assets/breakroom/door.png" id="10_4bxv0"]
+
+[node name="Example" type="Node2D" unique_id=1113780637]
+
+[node name="Background" type="TextureRect" parent="." unique_id=960095621]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_dgceo")
+metadata/_edit_lock_ = true
+
+[node name="Vending" parent="." unique_id=717359299 instance=ExtResource("1_e4rg8")]
+position = Vector2(355, 291)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 1,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -1,
+"time": 1
+})
+flags = Dictionary[String, bool]({
+"early_exit": false,
+"repeatable": true
+})
+icons = Dictionary[String, String]({
+"down": "tidiness",
+"up": "energy"
+})
+task_name = "have-snack"
+hover_message = "Have snack"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Vending" index="0" unique_id=1130463136]
+position = Vector2(374, 119)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0bajx")
+
+[node name="CollisionPolygon2D" parent="Vending" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-14, -120.999985)
+polygon = PackedVector2Array(-9.435284, -13.392072, 10.044014, -13.392072, 11.565834, 41.703377, 10.957108, 41.938324, 9.841106, 40.293686, 8.014919, 39.588837, 4.8698273, 40.64611, 3.7538261, 41.350952, -7.1018257, 41.938324, -7.2032795, 43.348015, -7.710554, 43.465492, -9.536737, 34.067543, -10.246922, -11.747432)
+
+[node name="Chair" parent="." unique_id=1671882795 instance=ExtResource("1_e4rg8")]
+position = Vector2(487, 654)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": -1,
+"end": 100,
+"energy": 2,
+"performance": -1,
+"satisfaction": 2,
+"tidiness": 0,
+"time": 2
+})
+flags = Dictionary[String, bool]({
+"early_exit": false,
+"repeatable": true
+})
+task_name = "rest"
+hover_message = "Take a load off"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Chair" index="0" unique_id=1130463136]
+position = Vector2(242, -244)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2sest")
+
+[node name="CollisionPolygon2D" parent="Chair" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(76, -148.99998)
+polygon = PackedVector2Array(-20.493843, 4.111599, -18.566204, 1.9970627, -14.60947, 0.3524208, -12.681831, 1.1747437, -11.464378, 2.9368553, -14.913834, 8.575623, -16.942928, 11.395004, -17.247292, 15.154182, 3.7538261, 13.627022, 4.666916, 29.133629, 2.8407326, 37.004402, 1.6232758, 37.004402, 0.30436707, 24.08223, -13.08765, 25.844345, -13.7978325, 33.127754, -18.972023, 37.12188, -20.18948, 37.12188, -17.957478, 13.979439, -17.754566, 10.690163, -21, 6)
+
+[node name="Coffee" parent="." unique_id=845083965 instance=ExtResource("1_e4rg8")]
+position = Vector2(946, 341)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 1,
+"end": 100,
+"energy": 3,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -1,
+"time": 1
+})
+flags = Dictionary[String, bool]({
+"early_exit": false,
+"repeatable": true
+})
+icons = Dictionary[String, String]({
+"down": "tidiness",
+"up": "energy"
+})
+task_name = "have-coffee"
+hover_message = "Get coffee"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Coffee" index="0" unique_id=1130463136]
+position = Vector2(-217, 69)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_u2sgn")
+
+[node name="CollisionPolygon2D" parent="Coffee" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(35.00006, -42.999985)
+polygon = PackedVector2Array(-6.1887436, -0.1174736, -1.0145569, -0.35242462, -1.0145569, 8.81057, -6.1887436, 8.693096)
+
+[node name="Fridge" parent="." unique_id=1845631786 instance=ExtResource("1_e4rg8")]
+position = Vector2(582, 269)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 5,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -2,
+"time": 2
+})
+icons = Dictionary[String, String]({
+"down": "tidiness",
+"up": "energy"
+})
+task_name = "cold-lunch"
+hover_message = "Have cold lunch"
+blocked_by = Array[String](["hot-lunch"])
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Fridge" index="0" unique_id=1130463136]
+position = Vector2(147, 141)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_w60y4")
+
+[node name="CollisionPolygon2D" parent="Fridge" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-21, -87.999985)
+polygon = PackedVector2Array(-9.942558, -13.509546, 14.60947, -13.509546, 15.62402, 36.886932, -9.13092, 38.414093, -10.754196, -12.217328)
+
+[node name="Microwave" parent="." unique_id=489621305 instance=ExtResource("1_e4rg8")]
+position = Vector2(796, 344)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 7,
+"performance": 0,
+"satisfaction": 2,
+"tidiness": -3,
+"time": 4
+})
+task_name = "hot-lunch"
+hover_message = "Have hot lunch"
+blocked_by = Array[String](["cold-lunch"])
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Microwave" index="0" unique_id=1130463136]
+position = Vector2(-67, 66)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_02olu")
+
+[node name="CollisionPolygon2D" parent="Microwave" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-14.999939, -48.999985)
+polygon = PackedVector2Array(-4.464012, 8.810574, -4.464012, 0.35242462, 7.000366, 0.35242462, 8.826553, 1.5271683, 8.928009, 9.867844, -3.8552856, 10.102791)
+
+[node name="Water" parent="." unique_id=1596034695 instance=ExtResource("1_e4rg8")]
+position = Vector2(1359, 452)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 2,
+"performance": -2,
+"satisfaction": 2,
+"tidiness": 0,
+"time": 1
+})
+icons = Dictionary[String, String]({
+"down": "performance",
+"up": "energy"
+})
+task_name = "water-chat"
+hover_message = "Water cooler chat"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Water" index="0" unique_id=1130463136]
+position = Vector2(-630, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_dhow4")
+
+[node name="CollisionPolygon2D" parent="Water" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-48.99994, -96.999985)
+polygon = PackedVector2Array(2.5363617, -8.693096, 10.551285, -6.813507, 11.565826, -5.168869, 11.058563, 29.133629, 10.348373, 30.073425, 7.8120117, 30.895744, 4.058182, 30.895744, 1.217453, 30.073425, -2.739273, 26.431717, -2.8407288, -1.6446381, -2.434906, -4.4640236, -0.60873413, -7.1659317)
+
+[node name="Door" parent="." unique_id=184511040 instance=ExtResource("2_xbi64")]
+position = Vector2(111, 225)
+destination = "Office"
+hover_message = "Return to office"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]
+position = Vector2(618, 185)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_4bxv0")
+
+[node name="CollisionPolygon2D" parent="Door" index="1" unique_id=325856230]
+visible = false
+position = Vector2(-98, -94)
+polygon = PackedVector2Array(-20, -132, 198, -133, 219, 321, -2, 318)
+
+[node name="Overlay" type="TextureRect" parent="." unique_id=461924244]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_b13k2")
+metadata/_edit_lock_ = true
+
+[editable path="Vending"]
+[editable path="Chair"]
+[editable path="Coffee"]
+[editable path="Fridge"]
+[editable path="Microwave"]
+[editable path="Water"]
+[editable path="Door"]

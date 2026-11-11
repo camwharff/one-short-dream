@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://co15bi8ykav85"]
+
+[ext_resource type="Script" uid="uid://hhto0p74eqtm" path="res://scenes/main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cv62wp4oy27ba" path="res://scenes/ui/hud.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bcsv3e4ovrxru" path="res://scenes/phase.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dqthru4nwxssn" path="res://scenes/ui/menu.tscn" id="3_efxa6"]
+[ext_resource type="AudioStream" uid="uid://b7vas6a6x3mve" path="res://assets/audio/Long Stroll.mp3" id="4_dg77c"]
+[ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="5_ycdy4"]
+[ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://rooms.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://scenes/rooms/example.tscn" id="7_efxa6"]
+[ext_resource type="PackedScene" uid="uid://cu2siuum2jlef" path="res://scenes/rooms/title.tscn" id="10_4c57u"]
+
+[node name="Main" type="Node" unique_id=998919397]
+script = ExtResource("1_h2yge")
+
+[node name="HUD" parent="." unique_id=1066121775 instance=ExtResource("2_h2yge")]
+
+[node name="Menu" parent="." unique_id=1192830433 instance=ExtResource("3_efxa6")]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1980941736]
+stream = ExtResource("4_dg77c")
+volume_db = 5.0
+autoplay = true
+parameters/looping = true
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="." unique_id=1335390902]
+stream = ExtResource("5_ycdy4")
+volume_db = 5.0
+bus = &"Sounds"
+
+[node name="Phases" type="Node" parent="." unique_id=748608740]
+
+[node name="Dawn" parent="Phases" unique_id=1685379031 instance=ExtResource("3_1bvp3")]
+phase_name = "Dawn"
+time_limit = 7
+
+[node name="Morning" parent="Phases" unique_id=1520849030 instance=ExtResource("3_1bvp3")]
+phase_name = "Morning"
+time_limit = 12
+
+[node name="Afternoon" parent="Phases" unique_id=662511096 instance=ExtResource("3_1bvp3")]
+phase_name = "Afternoon"
+time_limit = 10
+
+[node name="Rooms" type="Node2D" parent="." unique_id=1421217793]
+script = ExtResource("6_7mycd")
+
+[node name="Example" parent="Rooms" unique_id=1113780637 instance=ExtResource("7_efxa6")]
+
+[node name="Title" parent="." unique_id=1068749284 instance=ExtResource("10_4c57u")]
+
+[connection signal="advance_phase" from="HUD" to="." method="_on_hud_advance_phase"]
+[connection signal="click_sound" from="HUD" to="." method="_play_click_audio"]
+[connection signal="game_ready" from="HUD" to="." method="_begin_game"]
+[connection signal="go_to_title" from="HUD" to="." method="_on_to_title"]
+[connection signal="new_game" from="HUD" to="." method="_on_new_game"]
+[connection signal="click_sound" from="Menu" to="." method="_play_click_audio"]
+[connection signal="color_access" from="Menu" to="." method="_on_menu_color_access"]
+[connection signal="music_changed" from="Menu" to="." method="_on_menu_music_changed"]
+[connection signal="new_game" from="Menu" to="." method="_on_new_game"]
+[connection signal="sounds_changed" from="Menu" to="." method="_on_menu_sounds_changed"]
+[connection signal="to_title" from="Menu" to="." method="_on_to_title"]
+[connection signal="new_game" from="Title/StartButton" to="." method="_start_first_phase"]
+
+[editable path="Title"]
