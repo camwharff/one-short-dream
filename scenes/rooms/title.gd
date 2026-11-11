@@ -8,9 +8,9 @@ var color_accessible
 
 
 func _ready() -> void:
-	$StartButton.add_to_group("clickables")
 	$StartButton.mouse_entered.connect(_on_mouse_entered)
 	$StartButton.mouse_exited.connect(_on_mouse_exited)
+	$StartButton.add_to_group("clickables")
 
 
 func _on_mouse_entered() -> void:

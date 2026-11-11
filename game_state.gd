@@ -20,6 +20,7 @@ var extra_time = 0
 var completed: Dictionary = { }
 var tasks: Dictionary = { }
 var dependencies: Dictionary = { }
+var npcs: Dictionary = { }
 
 
 func _ready():
@@ -32,7 +33,7 @@ func setup():
 	_init_phase_groups()
 	_build_dependencies()
 	_init_task_availabilities()
-	DataManager.load_task_data()
+	DataManager.save_task_data()
 	setup_complete.emit()
 
 
@@ -52,6 +53,12 @@ func _reset_stats():
 	performance = 0
 	carryover = 0
 	current_phase = 0
+
+
+func _init_npc_lists():
+	for npc in get_tree().get_nodes_in_group("npc"):
+		completed[npc.npc_name] = false
+		npcs[npc.npc_name] = npc
 
 
 func _init_task_lists():

@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://d05yg3ekesrn5" path="res://assets/breakroom/microwave.png" id="7_02olu"]
 [ext_resource type="Texture2D" uid="uid://cospybacjj03y" path="res://assets/breakroom/water.png" id="8_dhow4"]
 [ext_resource type="Texture2D" uid="uid://cee8s6x867nlo" path="res://assets/breakroom/door.png" id="10_4bxv0"]
+[ext_resource type="PackedScene" uid="uid://d2wc30q2tc66h" path="res://scenes/ui/npc.tscn" id="12_7aobt"]
+[ext_resource type="Texture2D" uid="uid://b6pv2r7fb83tb" path="res://assets/guy.png" id="13_8q4o1"]
 
-[node name="Example" type="Node2D" unique_id=1113780637]
+[node name="RoomExample" type="Node2D" unique_id=1113780637]
 
 [node name="Background" type="TextureRect" parent="." unique_id=960095621]
 offset_right = 40.0
@@ -244,6 +246,19 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_b13k2")
 metadata/_edit_lock_ = true
 
+[node name="NPC" parent="." unique_id=409997614 instance=ExtResource("12_7aobt")]
+npc_name = "guy"
+
+[node name="Sprite2D" parent="NPC" index="0" unique_id=1476398550]
+position = Vector2(1108, 357)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_8q4o1")
+
+[node name="CollisionPolygon2D" parent="NPC" index="1" unique_id=2108581904]
+visible = false
+position = Vector2(1263, 265)
+polygon = PackedVector2Array(-20.932785, -7.2782674, -13.290558, -7.1659317, -11.8701935, 6.226137, -5.072731, 10.220266, -2.6378174, 19.853159, -2.029091, 32.070488, -6.696007, 32.187958, -23.334572, 32.305435, -22.725845, 28.311308, -30.23349, 21.145376, -24.957848, 10.102789, -19.682205, 6.813509)
+
 [editable path="Vending"]
 [editable path="Chair"]
 [editable path="Coffee"]
@@ -251,3 +266,4 @@ metadata/_edit_lock_ = true
 [editable path="Microwave"]
 [editable path="Water"]
 [editable path="Door"]
+[editable path="NPC"]

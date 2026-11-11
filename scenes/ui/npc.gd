@@ -28,6 +28,7 @@ signal hover(
 @export var hover_message: String
 @export var prereqs: Array[String] = []
 @export var blocked_by: Array[String] = []
+@export var triggers: Array[String] = []
 
 var enable = false
 var complete = false
@@ -36,7 +37,7 @@ var color_accessible = false
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var dialogue: DialogueResource = load(
-	"res://" + npc_name + ".dialogue"
+	"res://resources/dialogue/" + npc_name + ".dialogue"
 )
 
 
@@ -65,7 +66,7 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event.is_action_pressed("leftclick"):
-		# do something
+		DialogueManager.show_dialogue_balloon(dialogue, "start")
 		input_pickable = false
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		audio.play()

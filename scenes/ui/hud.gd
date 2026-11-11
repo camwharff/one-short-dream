@@ -7,10 +7,6 @@ signal go_to_title
 signal click_sound
 
 @onready var time_text = $Display/TimeBG/Time/Data
-@onready var energy_text = $Display/Scores/ScoreGrid/Energy/Score
-@onready var sat_text = $Display/Scores/ScoreGrid/Satisfaction/Score
-@onready var perf_text = $Display/Scores/ScoreGrid/Performance/Score
-@onready var tidy_text = $Display/Scores/ScoreGrid/Tidiness/Score
 
 @onready var hover_box: Control = $Display/HoverBox
 
@@ -56,6 +52,8 @@ func _hud_setup():
 		task.hover.connect(_hover_handler)
 	for portal in get_tree().get_nodes_in_group("portals"):
 		portal.hover.connect(_hover_handler)
+	for npc in get_tree().get_nodes_in_group("npcs"):
+		npc.hover.connect(_hover_handler)
 	_update_hud()
 	_show_component($Display)
 	$DimBG.hide()
@@ -85,10 +83,6 @@ func _on_phase_end() -> void:
 
 func _update_hud() -> void:
 	time_text.text = str(GameState.time_left)
-	energy_text.text = str(GameState.energy)
-	sat_text.text = str(GameState.satisfaction)
-	perf_text.text = str(GameState.performance)
-	tidy_text.text = str(GameState.tidiness)
 
 
 func _hover_handler(

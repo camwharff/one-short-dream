@@ -144,7 +144,8 @@ Audio Assets:
 \"Bright button click 3\", Produced by ZapSplat - https://www.zapsplat.com/music/bright-button-click-3/
 \"Cat meow, hungry\", Produced by Blastwave FX - https://www.zapsplat.com/music/cat-meow-hungry/
 \"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
-\"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
+\"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/
+Dialogue System by Nathan Hoad"
 
 [node name="HowTo" type="VBoxContainer" parent="." unique_id=820304819]
 visible = false

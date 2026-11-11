@@ -3,7 +3,7 @@ extends Node
 @onready var rooms = $Rooms
 @onready var phases: Array = $Phases.get_children()
 
-var first_game = true
+var first_game = false
 
 
 # Called when the node enters the scene tree for the first time.
