@@ -4,19 +4,16 @@ extends Area2D
 signal hover(message: String, enable: bool, up: String, down: String)
 
 @export var stats: Dictionary[String, int] = {
-	"time": 1,
-	"tidiness": 0,
-	"energy": 0,
-	"satisfaction": 0,
-	"performance": 0,
 	"carryover": 0,
+	"energy": 0,
+	"happiness": 0,
+	"sanity": 0,
+	"stress": 0,
+	"time": 1,
 	"begin": 0,
 	"end": 100,
 }
-@export var flags: Dictionary[String, bool] = {
-	"early_exit": false,
-	"repeatable": false,
-}
+@export var flags: Dictionary[String, bool] = { "early_exit": false }
 @export var icons: Dictionary[String, String] = {
 	"up": "energy",
 	"down": "time",
@@ -29,7 +26,6 @@ signal hover(message: String, enable: bool, up: String, down: String)
 
 var enable = false
 var complete = false
-var is_done = false
 var in_phase = false
 var color_accessible = false
 
@@ -72,7 +68,6 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 
 
 func complete_task() -> void:
-	is_done = true
 	complete = true
 
 

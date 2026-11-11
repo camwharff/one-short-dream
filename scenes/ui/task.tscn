@@ -5,14 +5,6 @@
 
 [node name="Task" type="Area2D" unique_id=1671882795]
 script = ExtResource("1_gf231")
-stats = null
-flags = null
-icons = null
-task_name = null
-hover_message = null
-prereqs = null
-blocked_by = null
-phases = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1130463136]
 

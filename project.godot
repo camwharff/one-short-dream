@@ -29,6 +29,7 @@ DataManager="*uid://cn5qj6mppvphk"
 GameState="*res://game_state.gd"
 Endings="*uid://badkmj8y8ak8x"
 RunManager="*uid://cey6lkxsgfc5q"
+DialogueManager="*uid://c3rodes2l3gxb"
 
 [display]
 
@@ -39,7 +40,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [global_group]
 
@@ -49,6 +50,7 @@ Afternoon=""
 Dawn=""
 Morning=""
 clickables=""
+npcs=""
 
 [input]
 

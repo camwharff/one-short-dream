@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2wc30q2tc66h"]
+
+[ext_resource type="Script" uid="uid://cxd05mn3o72m5" path="res://scenes/ui/npc.gd" id="1_py3pr"]
+[ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="2_hv70h"]
+
+[node name="NPC" type="Area2D" unique_id=409997614]
+script = ExtResource("1_py3pr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476398550]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2108581904]
+position = Vector2(276.32648, 123.95625)
+scale = Vector2(9.856618, 8.5125)
+polygon = PackedVector2Array(-20.932785, -7.2782674, 0.77851486, -7.2782674, 0.4741516, 6.348751, -21, 6)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1483353706]
+stream = ExtResource("2_hv70h")
+bus = &"Sounds"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
