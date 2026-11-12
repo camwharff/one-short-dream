@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cospybacjj03y" path="res://assets/breakroom/water.png" id="8_dhow4"]
 [ext_resource type="Texture2D" uid="uid://cee8s6x867nlo" path="res://assets/breakroom/door.png" id="10_4bxv0"]
 [ext_resource type="PackedScene" uid="uid://d2wc30q2tc66h" path="res://scenes/ui/npc.tscn" id="12_7aobt"]
-[ext_resource type="Texture2D" uid="uid://b6pv2r7fb83tb" path="res://assets/guy.png" id="13_8q4o1"]
+[ext_resource type="Texture2D" uid="uid://b6pv2r7fb83tb" path="res://characters/Guy/portrait.png" id="13_8q4o1"]
 
 [node name="RoomExample" type="Node2D" unique_id=1113780637]
 
@@ -247,7 +247,8 @@ texture = ExtResource("6_b13k2")
 metadata/_edit_lock_ = true
 
 [node name="NPC" parent="." unique_id=409997614 instance=ExtResource("12_7aobt")]
-npc_name = "guy"
+npc_name = "Guy"
+hover_message = "Hey man"
 
 [node name="Sprite2D" parent="NPC" index="0" unique_id=1476398550]
 position = Vector2(1108, 357)

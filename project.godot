@@ -70,7 +70,7 @@ leftclick={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialogue/guy.dialogue")
+locale/translations_pot_files=PackedStringArray("res://characters/Guy/chat.dialogue")
 
 [rendering]
 

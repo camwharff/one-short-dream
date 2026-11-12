@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c2iq8w3d3n144"
+path="res://.godot/imported/chat.dialogue-3e5c0100f4d249467fa2ebc95f58028c.tres"
+
+[deps]
+
+source_file="res://characters/Guy/chat.dialogue"
+dest_files=["res://.godot/imported/chat.dialogue-3e5c0100f4d249467fa2ebc95f58028c.tres"]
+
+[params]
+
+defaults=true

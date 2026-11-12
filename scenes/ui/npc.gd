@@ -37,7 +37,7 @@ var color_accessible = false
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var dialogue: DialogueResource = load(
-	"res://resources/dialogue/" + npc_name + ".dialogue"
+	"res://characters/%s/chat.dialogue" % npc_name
 )
 
 
