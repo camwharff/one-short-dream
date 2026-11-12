@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dqthru4nwxssn" path="res://scenes/ui/menu.tscn" id="3_efxa6"]
 [ext_resource type="AudioStream" uid="uid://b7vas6a6x3mve" path="res://assets/audio/Long Stroll.mp3" id="4_dg77c"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="5_ycdy4"]
-[ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://rooms.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://scenes/rooms.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://6buicxxj4a1p" path="res://puzzles/minesweeper/minesweeper.tscn" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://scenes/rooms/office.tscn" id="7_efxa6"]
-[ext_resource type="Script" uid="uid://bcdkr7l7j3c60" path="res://puzzles.gd" id="7_ya4ey"]
+[ext_resource type="Script" uid="uid://bcdkr7l7j3c60" path="res://scenes/puzzles.gd" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://cu2siuum2jlef" path="res://scenes/rooms/title.tscn" id="10_4c57u"]
 
 [node name="Main" type="Node" unique_id=998919397]

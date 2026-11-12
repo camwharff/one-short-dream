@@ -38,7 +38,7 @@ const SAFE = preload(EXT + "sprites/safe.png")
 @onready var timer: Timer = $Timer
 
 # game related values
-const TILE = preload(EXT + "scenes/tile.tscn")
+const TILE = preload(EXT + "tile.tscn")
 const GRID_SIZE: int = 32
 
 @export var rows: int = 12
@@ -98,28 +98,28 @@ func update_mine_guess_counter() -> void:
 
 
 # create tiles inside of the grid
-func generate_tiles(rows: int, columns: int, mines: int) -> void:
+func generate_tiles() -> void:
 	## add tiles to the root node and grid
 	## the tile scenes are treated like abstract objects
 	## they will have 'virtual positions' based on the grid
 	## these positions are simply their index position on the grid array
 	## columns for x-axis and rows for y-axis
 	for y in range(rows):
-		for x in range(columns):
+		for x in range(cols):
 			## calculate offsets for tile position
-			var grid_width: int = GRID_SIZE * columns
+			var grid_width: int = GRID_SIZE * cols
 			var grid_height: int = GRID_SIZE * rows
-			var screen_width: int = get_viewport_size().x
-			var screen_height: int = get_viewport_size().y
-			var hor_offset: int = ((screen_width - grid_width) / 2)
-			var ver_offset: int = ((screen_height - grid_height) / 2)
+			var screen_width: int = int(get_viewport_size().x)
+			var screen_height: int = int(get_viewport_size().y)
+			var hor_offset: int = int((screen_width - grid_width) / 2.0)
+			var ver_offset: int = int((screen_height - grid_height) / 2.0)
 
 			## add new tile and set its position and virtual position
 			var tile_pos: Vector2 = Vector2(
 				(GRID_SIZE * x) + hor_offset,
 				(GRID_SIZE * y) + ver_offset,
 			)
-			var virtual_pos: int = x + (y * columns)
+			var virtual_pos: int = x + (y * cols)
 			add_tile(tile_pos, virtual_pos, y, x)
 
 
@@ -341,7 +341,7 @@ func _ready() -> void:
 	## connect to tile pressed signal from the SignalBus
 	SignalBus.tile_pressed.connect(on_tile_pressed)
 
-	generate_tiles(rows, cols, mines)
+	generate_tiles()
 
 
 # call when a tile is pressed

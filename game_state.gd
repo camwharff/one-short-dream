@@ -191,8 +191,8 @@ func time_out():
 
 func normalize_stats() -> Array[int]:
 	return [
-		clampi(100 * ((energy + 7) / 25.0), 0, 100),
-		clampi(100 * ((performance - 8) / 22.0), 0, 100),
-		clampi(100 * ((satisfaction - 9) / 17.0), 0, 100),
-		clampi(100 * ((tidiness + 4) / 16.0), 0, 100),
+		clampi(int(100 * ((energy + 7) / 25.0)), 0, 100),
+		clampi(int(100 * ((performance - 8) / 22.0)), 0, 100),
+		clampi(int(100 * ((satisfaction - 9) / 17.0)), 0, 100),
+		clampi(int(100 * ((tidiness + 4) / 16.0)), 0, 100),
 	]

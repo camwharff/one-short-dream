@@ -8,6 +8,7 @@ signal hover(
 	down: String,
 	node: Node2D,
 )
+@warning_ignore("unused_signal")
 signal start_puzzle(puzzle: String)
 
 @export var stats: Dictionary[String, int] = {
