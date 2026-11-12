@@ -136,15 +136,21 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "Created by camilles-corner.itch.io
+
 Background Music:
 \"Long Stroll\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0
 https://creativecommons.org/licenses/by/4.0/
+
 Audio Assets:
 \"Bright button click 3\", Produced by ZapSplat - https://www.zapsplat.com/music/bright-button-click-3/
 \"Cat meow, hungry\", Produced by Blastwave FX - https://www.zapsplat.com/music/cat-meow-hungry/
 \"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
 \"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/
+
+Font:
+Beholden by Amorphous - https://amorphous.itch.io/beholden
+
 Dialogue System by Nathan Hoad"
 
 [node name="HowTo" type="VBoxContainer" parent="." unique_id=820304819]
