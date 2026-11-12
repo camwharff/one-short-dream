@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://btw2q168uxdwv"]
+
+[ext_resource type="Texture2D" uid="uid://d3krhh6iigwra" path="res://assets/breakroom/background.png" id="1_dgceo"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://scenes/ui/task.tscn" id="1_e4rg8"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://scenes/ui/portal.tscn" id="2_xbi64"]
+[ext_resource type="Texture2D" uid="uid://dcpyjsk6ngdnb" path="res://assets/breakroom/vending.png" id="3_0bajx"]
+[ext_resource type="Resource" uid="uid://c2iq8w3d3n144" path="res://characters/Boss/boss.dialogue" id="7_hplsr"]
+[ext_resource type="Texture2D" uid="uid://b6pv2r7fb83tb" path="res://characters/Boss/portrait.png" id="7_oh624"]
+[ext_resource type="Texture2D" uid="uid://cee8s6x867nlo" path="res://assets/breakroom/door.png" id="10_4bxv0"]
+[ext_resource type="PackedScene" uid="uid://d2wc30q2tc66h" path="res://scenes/ui/npc.tscn" id="12_7aobt"]
+
+[node name="Office" type="Node2D" unique_id=1113780637]
+
+[node name="Background" type="TextureRect" parent="." unique_id=960095621]
+offset_right = 2915.0
+offset_bottom = 1640.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("1_dgceo")
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="Vending" parent="." unique_id=717359299 instance=ExtResource("1_e4rg8")]
+position = Vector2(355, 291)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 1,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -1,
+"time": 1
+})
+flags = Dictionary[String, bool]({
+"early_exit": false,
+"repeatable": true
+})
+icons = Dictionary[String, String]({
+"down": "tidiness",
+"up": "energy"
+})
+task_name = "have-snack"
+hover_message = "Have snack"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Vending" index="0" unique_id=1130463136]
+position = Vector2(617, 249)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("3_0bajx")
+
+[node name="CollisionPolygon2D" parent="Vending" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(93.204956, -72.57433)
+scale = Vector2(12.57865, 11.377114)
+polygon = PackedVector2Array(-9.435284, -13.392072, 10.044014, -13.392072, 11.565834, 41.703377, 10.957108, 41.938324, 9.841106, 40.293686, 8.014919, 39.588837, 4.8698273, 40.64611, 3.7538261, 41.350952, -7.1018257, 41.938324, -7.2032795, 43.348015, -7.710554, 43.465492, -9.536737, 34.067543, -10.246922, -11.747432)
+
+[node name="Door" parent="." unique_id=184511040 instance=ExtResource("2_xbi64")]
+destination = "Office"
+hover_message = "Return to office"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]
+position = Vector2(951.625, 544)
+scale = Vector2(0.65, 0.66097564)
+texture = ExtResource("10_4bxv0")
+
+[node name="CollisionPolygon2D" parent="Door" index="1" unique_id=325856230]
+visible = false
+position = Vector2(22.742414, 179.32376)
+scale = Vector2(1.2839957, 1.3050661)
+polygon = PackedVector2Array(-20, -132, 198, -133, 219, 321, -2, 318)
+
+[node name="Boss" parent="." unique_id=409997614 instance=ExtResource("12_7aobt")]
+position = Vector2(111, 89)
+npc_name = "Boss"
+hover_message = "Hey man"
+dialogue = ExtResource("7_hplsr")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Boss" index="0" unique_id=1476398550]
+position = Vector2(1108, 357)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_oh624")
+
+[node name="CollisionPolygon2D" parent="Boss" index="1" unique_id=2108581904]
+visible = false
+position = Vector2(1263, 265)
+polygon = PackedVector2Array(-20.932785, -7.2782674, -13.290558, -7.1659317, -11.8701935, 6.226137, -5.072731, 10.220266, -2.6378174, 19.853159, -2.029091, 32.070488, -6.696007, 32.187958, -23.334572, 32.305435, -22.725845, 28.311308, -30.23349, 21.145376, -24.957848, 10.102789, -19.682205, 6.813509)
+
+[editable path="Vending"]
+[editable path="Door"]
+[editable path="Boss"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://6buicxxj4a1p"]
+
+[ext_resource type="Script" uid="uid://cf4jfpwlnur2u" path="res://puzzles/minesweeper/minesweeper.gd" id="1_bpjbx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xgd6b"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_d4yan"]
+font_size = 32
+
+[node name="Minesweeper" type="Control" unique_id=1329790809]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bpjbx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1993474520]
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1079.0
+color = Color(0.22745098, 0, 0.38039216, 1)
+
+[node name="Control" type="Control" parent="." unique_id=319241458]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeElapsed" type="Label" parent="Control" unique_id=227417349]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 130.0
+text = "TIME: 999:99"
+label_settings = SubResource("LabelSettings_xgd6b")
+
+[node name="Message" type="Label" parent="Control" unique_id=1550620838]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 192.0
+offset_right = 224.0
+offset_bottom = 237.0
+text = "MESSAGE"
+label_settings = SubResource("LabelSettings_d4yan")
+
+[node name="MineCounter" type="Label" parent="Control" unique_id=1096563370]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 239.0
+offset_right = 229.0
+offset_bottom = 284.0
+text = "MESSAGE"
+label_settings = SubResource("LabelSettings_d4yan")
+
+[node name="Timer" type="Timer" parent="." unique_id=936121854]
+wait_time = 60.0

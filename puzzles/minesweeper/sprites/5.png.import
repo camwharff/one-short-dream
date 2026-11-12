@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6pv2r7fb83tb"
-path="res://.godot/imported/portrait.png-6f650b6a05cbac715ae7d4cb12beb782.ctex"
+uid="uid://cuboqxcs4ywqq"
+path="res://.godot/imported/5.png-49fc658aeba82f0b1a9718a0ee4ce9f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Guy/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-6f650b6a05cbac715ae7d4cb12beb782.ctex"]
+source_file="res://puzzles/minesweeper/sprites/5.png"
+dest_files=["res://.godot/imported/5.png-49fc658aeba82f0b1a9718a0ee4ce9f4.ctex"]
 
 [params]
 

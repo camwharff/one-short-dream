@@ -1,0 +1,24 @@
+~ start
+Boss: I have a special assignment for you.
+- Accept the assignment
+	Boss: TBD Spreadsheet minesweeper description
+	$> start_puzzle.emit("Minesweeper")
+	Boss: I need you to do well, or your job is on the line!
+- Reject the assignment
+	Boss: You'll regret this! Pack your things and get out, you're fired!
+	=> END
+- Leave the conversation 
+	=> END
+=> END
+
+~ lostmine
+Boss: Not good enough! Maybe you'll perform better at your next job, but you're done here. Pack your desk and leave.
+=> END
+
+~ losttime
+Boss: Not quick enough! Maybe you'll perform better at your next job, but you're done here. Pack your desk and leave.
+=> END
+
+~ won
+Boss: Excellent work! Unfortunately, we are letting you go due to downsizing efforts. We sure will miss that can-do attitude!
+=> END

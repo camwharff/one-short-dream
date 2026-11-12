@@ -7,7 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://b7vas6a6x3mve" path="res://assets/audio/Long Stroll.mp3" id="4_dg77c"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://rooms.gd" id="6_7mycd"]
-[ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://scenes/rooms/room_example.tscn" id="7_efxa6"]
+[ext_resource type="PackedScene" uid="uid://6buicxxj4a1p" path="res://puzzles/minesweeper/minesweeper.tscn" id="7_choun"]
+[ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://scenes/rooms/office.tscn" id="7_efxa6"]
+[ext_resource type="Script" uid="uid://bcdkr7l7j3c60" path="res://puzzles.gd" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://cu2siuum2jlef" path="res://scenes/rooms/title.tscn" id="10_4c57u"]
 
 [node name="Main" type="Node" unique_id=998919397]
@@ -33,25 +35,33 @@ bus = &"Sounds"
 
 [node name="Dawn" parent="Phases" unique_id=1685379031 node_paths=PackedStringArray("default_room") instance=ExtResource("3_1bvp3")]
 phase_name = "Dawn"
-default_room = NodePath("../../Rooms/RoomExample")
+default_room = NodePath("../../Rooms/Office")
 time_limit = 7
 
 [node name="Morning" parent="Phases" unique_id=1520849030 node_paths=PackedStringArray("default_room") instance=ExtResource("3_1bvp3")]
 phase_name = "Morning"
-default_room = NodePath("../../Rooms/RoomExample")
+default_room = NodePath("../../Rooms/Office")
 time_limit = 12
 
 [node name="Afternoon" parent="Phases" unique_id=662511096 node_paths=PackedStringArray("default_room") instance=ExtResource("3_1bvp3")]
 phase_name = "Afternoon"
-default_room = NodePath("../../Rooms/RoomExample")
+default_room = NodePath("../../Rooms/Office")
 time_limit = 10
 
 [node name="Rooms" type="Node2D" parent="." unique_id=1421217793]
+z_index = 6
 script = ExtResource("6_7mycd")
 
-[node name="RoomExample" parent="Rooms" unique_id=1113780637 instance=ExtResource("7_efxa6")]
+[node name="Office" parent="Rooms" unique_id=1113780637 instance=ExtResource("7_efxa6")]
 
 [node name="Title" parent="." unique_id=1068749284 instance=ExtResource("10_4c57u")]
+z_index = 8
+
+[node name="Puzzles" type="Node2D" parent="." unique_id=744331326]
+z_index = 10
+script = ExtResource("7_ya4ey")
+
+[node name="Minesweeper" parent="Puzzles" unique_id=1371722102 instance=ExtResource("7_choun")]
 
 [connection signal="advance_phase" from="HUD" to="." method="_on_hud_advance_phase"]
 [connection signal="click_sound" from="HUD" to="." method="_play_click_audio"]
