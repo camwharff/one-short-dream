@@ -236,52 +236,52 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "0"
 
-[node name="Performance" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=1362406732]
+[node name="Happiness" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=1362406732]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 columns = 2
 
-[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Performance" unique_id=1723974166]
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Happiness" unique_id=1723974166]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Performance:"
 
-[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Performance" unique_id=370442443]
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Happiness" unique_id=370442443]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "0"
 
-[node name="Satisfaction" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=87057454]
+[node name="Sanity" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=87057454]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 columns = 2
 
-[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Satisfaction" unique_id=1935462544]
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Sanity" unique_id=1935462544]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Satisfaction:"
 
-[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Satisfaction" unique_id=729888576]
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Sanity" unique_id=729888576]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "0"
 
-[node name="Tidiness" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=1359839567]
+[node name="Stress" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=1359839567]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 columns = 2
 
-[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Tidiness" unique_id=1412952185]
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Stress" unique_id=1412952185]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Tidiness:"
 
-[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Tidiness" unique_id=799514587]
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Stress" unique_id=799514587]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32

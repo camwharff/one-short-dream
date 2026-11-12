@@ -13,9 +13,9 @@ signal click_sound
 @onready var hover_text: Label = $Display/HoverBox/HoverCols/HoverText
 @onready var final_score: Label = $EndScreen/StatsBG/Stats/TotalScore/Score
 @onready var final_energy: Label = $EndScreen/StatsBG/Stats/FinalStats/Energy/Score
-@onready var final_sat: Label = $EndScreen/StatsBG/Stats/FinalStats/Sanity/Score
-@onready var final_perf: Label = $EndScreen/StatsBG/Stats/FinalStats/Happiness/Score
-@onready var final_tidy: Label = $EndScreen/StatsBG/Stats/FinalStats/Stress/Score
+@onready var final_sanity: Label = $EndScreen/StatsBG/Stats/FinalStats/Sanity/Score
+@onready var final_happiness: Label = $EndScreen/StatsBG/Stats/FinalStats/Happiness/Score
+@onready var final_stress: Label = $EndScreen/StatsBG/Stats/FinalStats/Stress/Score
 @onready var final_description: Label = $EndScreen/StatsBG/Stats/Description
 
 @onready var up_icon: TextureRect = $Display/HoverBox/HoverCols/UpIcon/Icon
@@ -132,9 +132,9 @@ func _on_game_end():
 		/ 3
 	) + "/100"
 	final_energy.text = str(normed_stats[0]) + "/100"
-	final_perf.text = str(normed_stats[1]) + "/100"
-	final_sat.text = str(normed_stats[2]) + "/100"
-	final_tidy.text = str(normed_stats[3]) + "/100"
+	final_happiness.text = str(normed_stats[1]) + "/100"
+	final_sanity.text = str(normed_stats[2]) + "/100"
+	final_stress.text = str(normed_stats[3]) + "/100"
 	final_description.text = Endings.generate_description()
 	_show_component($EndScreen)
 	$DimBG.show()
