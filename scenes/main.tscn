@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cv62wp4oy27ba" path="res://scenes/ui/hud.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bcsv3e4ovrxru" path="res://scenes/phase.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dqthru4nwxssn" path="res://scenes/ui/menu.tscn" id="3_efxa6"]
-[ext_resource type="AudioStream" uid="uid://byiqal6xa7snm" path="res://assets/audio/Mesmerizing Galaxy Loop.mp3" id="4_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://cup204jajfwsj" path="res://assets/audio/Vibing Over Venus.mp3" id="4_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://scenes/rooms.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://6buicxxj4a1p" path="res://puzzles/minesweeper/minesweeper.tscn" id="7_choun"]
@@ -57,7 +57,7 @@ script = ExtResource("6_7mycd")
 [node name="Title" parent="." unique_id=1068749284 instance=ExtResource("10_4c57u")]
 z_index = 8
 
-[node name="Puzzles" type="Node2D" parent="." unique_id=744331326]
+[node name="Puzzles" type="Node2D" parent="." unique_id=81070378]
 z_index = 10
 script = ExtResource("7_ya4ey")
 

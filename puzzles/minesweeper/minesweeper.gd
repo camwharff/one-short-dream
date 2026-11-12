@@ -32,10 +32,11 @@ const SAFE = preload(EXT + "sprites/safe.png")
 @export var owner_dialogue = "res://characters/Boss/boss.dialogue"
 
 # node references
-@onready var mine_counter: Label = $Control/MineCounter
-@onready var time_elapsed: Label = $Control/TimeElapsed
-@onready var message: Label = $Control/Message
+@onready var mine_counter: Label = $Labels/MineCounter
+@onready var time_elapsed: Label = $Labels/TimeElapsed
+@onready var message: Label = $Labels/Message
 @onready var timer: Timer = $Timer
+@onready var go_label: Label = $GameOverScreen/VBoxContainer/GameOverLabel
 
 # game related values
 const TILE = preload(EXT + "tile.tscn")
@@ -56,6 +57,8 @@ var seconds: int = 0
 # used for user flagging tiles
 var mine_guesses: int = 0
 
+var result: String
+
 
 # return the size of the viewport
 func get_viewport_size() -> Vector2:
@@ -67,7 +70,7 @@ func get_viewport_size() -> Vector2:
 func add_tile(pos: Vector2, virtual_pos: int, row: int, column: int) -> void:
 	## create new instance of a tile and add it to the root node
 	var tile_instance: Tile = TILE.instantiate()
-	add_child(tile_instance)
+	$Grid.add_child(tile_instance)
 
 	## set initial values and states of the tile
 	tile_instance.position = pos
@@ -82,8 +85,8 @@ func add_tile(pos: Vector2, virtual_pos: int, row: int, column: int) -> void:
 
 
 # update the time elapsed counter
-func update_time() -> void:
-	time_elapsed.text = "Time: %02d:%02d" % [minutes, seconds]
+func _process(_delta: float) -> void:
+	time_elapsed.text = "Time Left: " + str(int(timer.time_left))
 
 
 # update mine counter
@@ -264,7 +267,9 @@ func reveal_tile(tile: Tile) -> void:
 			message.text = "You Lost!"
 			can_click = false
 			tile.texture_normal = MINE_SELECTED
-			game_over.emit(puzzle_name, "lostmine")
+			result = "lostmine"
+			go_label.text = "You clicked a bad cell..."
+			$GameOverScreen.show()
 
 		## if this is a caution tile, check the number of bombs nearby
 		## you can probably just check the integer and get the texture using a string
@@ -389,13 +394,26 @@ func on_tile_pressed(virtual_pos: int, mouse_button: int) -> void:
 						mine_tile.texture_normal = FLAG
 						mine_tile.is_flagged = true
 
-				game_over.emit(puzzle_name, "won")
+				result = "won"
 				mine_guesses = 0
 				message.show()
 				message.text = "You Won!"
 				timer.stop()
 				can_click = false
+				go_label.text = "You won!"
+				$GameOverScreen.show()
 
 
 func _on_timer_timeout() -> void:
-	game_over.emit(puzzle_name, "losttime")
+	result = "losttime"
+	go_label.text = "You ran out of time..."
+	$GameOverScreen.show()
+
+
+func _on_button_pressed() -> void:
+	timer.start()
+	$StartScreen.hide()
+
+
+func _on_game_over_button_pressed() -> void:
+	game_over.emit(puzzle_name, result)
