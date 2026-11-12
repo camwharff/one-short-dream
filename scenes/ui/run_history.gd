@@ -5,9 +5,9 @@ extends MarginContainer
 const HEADERS = [
 	"Completion Time",
 	"Energy",
-	"Performance",
-	"Satisfaction",
-	"Tidiness",
+	"Happiness",
+	"Sanity",
+	"Stress",
 	"Total",
 ]
 
@@ -30,9 +30,9 @@ func show_runs():
 	for run in RunManager.runs:
 		_add_cell(_format_time(int(run["timestamp"])))
 		_add_cell(str(int(run["energy"])))
-		_add_cell(str(int(run["performance"])))
-		_add_cell(str(int(run["satisfaction"])))
-		_add_cell(str(int(run["tidiness"])))
+		_add_cell(str(int(run["happiness"])))
+		_add_cell(str(int(run["sanity"])))
+		_add_cell(str(int(run["stress"])))
 		_add_cell(str(int(run["total"])))
 
 

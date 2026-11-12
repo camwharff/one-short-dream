@@ -35,7 +35,7 @@ var scripts: Array[FileData]
 var resources: Array[FileData]
 var others: Array[FileData]
 
-# For performance and memory considerations, we add all files into one reusable array.
+# For perf and memory considerations, we add all files into one reusable array.
 var all_files: Array[FileData]
 
 var is_rebuild_cache: bool = true

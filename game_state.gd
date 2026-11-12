@@ -9,10 +9,10 @@ const LAST_PHASE = 2
 
 var time_left: int = 0
 var time_max: int = 0
-var tidiness: int = 0
+var stress: int = 0
 var energy: int = 0
-var satisfaction: int = 0
-var performance: int = 0
+var sanity: int = 0
+var happiness: int = 0
 var carryover: int = 0
 var current_phase = 0
 var extra_time = 0
@@ -47,10 +47,10 @@ func new_game_setup():
 func _reset_stats():
 	time_left = 0
 	time_max = 0
-	tidiness = 0
+	stress = 0
 	energy = 0
-	satisfaction = 0
-	performance = 0
+	sanity = 0
+	happiness = 0
 	carryover = 0
 	current_phase = 0
 
@@ -105,10 +105,10 @@ func _enable_phase_tasks(phase: String):
 
 func apply_task(current_task: Task) -> void:
 	time_left = clampi(time_left - current_task.stats["time"], 0, 100)
-	tidiness += current_task.stats["tidiness"]
+	stress += current_task.stats["stress"]
 	energy += current_task.stats["energy"]
-	satisfaction += current_task.stats["satisfaction"]
-	performance += current_task.stats["performance"]
+	sanity += current_task.stats["sanity"]
+	happiness += current_task.stats["happiness"]
 	carryover += current_task.stats["carryover"]
 	stats_changed.emit()
 
@@ -174,9 +174,9 @@ func time_out():
 			{
 				"timestamp": Time.get_unix_time_from_system(),
 				"energy": stats[0],
-				"performance": stats[1],
-				"satisfaction": stats[2],
-				"tidiness": stats[3],
+				"happiness": stats[1],
+				"sanity": stats[2],
+				"stress": stats[3],
 				"total": high_three.reduce(
 					func(accum, num):
 						return accum + num,
@@ -192,7 +192,7 @@ func time_out():
 func normalize_stats() -> Array[int]:
 	return [
 		clampi(int(100 * ((energy + 7) / 25.0)), 0, 100),
-		clampi(int(100 * ((performance - 8) / 22.0)), 0, 100),
-		clampi(int(100 * ((satisfaction - 9) / 17.0)), 0, 100),
-		clampi(int(100 * ((tidiness + 4) / 16.0)), 0, 100),
+		clampi(int(100 * ((happiness - 8) / 22.0)), 0, 100),
+		clampi(int(100 * ((sanity - 9) / 17.0)), 0, 100),
+		clampi(int(100 * ((stress + 4) / 16.0)), 0, 100),
 	]

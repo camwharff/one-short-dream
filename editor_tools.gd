@@ -47,25 +47,3 @@ func load_task_data_to_editor():
 			task.prereqs = task_data["prereqs"]
 			task.blocked_by = task_data["blocked_by"]
 			task.phases = task_data["phases"]
-
-
-func update_task_data():
-	for task in get_editor_interface().get_selection().get_selected_nodes():
-		var dupe_stats: Dictionary = task.stats.duplicate(true)
-		var dupe_flags: Dictionary = task.flags.duplicate(true)
-		var dupe_icons: Dictionary = task.icons.duplicate(true)
-		dupe_stats["time"] = task.time_cost
-		dupe_stats["tidiness"] = task.tidiness_change
-		dupe_stats["energy"] = task.energy_change
-		dupe_stats["satisfaction"] = task.satisfaction_change
-		dupe_stats["performance"] = task.performance_change
-		dupe_stats["carryover"] = task.carryover_change
-		dupe_stats["begin"] = task.begin
-		dupe_stats["end"] = task.end
-		dupe_flags["early_exit"] = task.early_exit
-		dupe_flags["repeatable"] = task.repeatable
-		dupe_icons["up"] = task.up_icon
-		dupe_icons["down"] = task.down_icon
-		task.stats = dupe_stats
-		task.flags = dupe_flags
-		task.icons = dupe_icons

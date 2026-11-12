@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byiqal6xa7snm"
+path="res://.godot/imported/Mesmerizing Galaxy Loop.mp3-8144cdb9526035dc20fdb56ef75b1fd7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Mesmerizing Galaxy Loop.mp3"
+dest_files=["res://.godot/imported/Mesmerizing Galaxy Loop.mp3-8144cdb9526035dc20fdb56ef75b1fd7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

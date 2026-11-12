@@ -6,31 +6,31 @@ func generate_description() -> String:
 
 
 func _sat_text():
-	var satisfaction = GameState.satisfaction
-	if satisfaction < 0:
+	var sanity = GameState.sanity
+	if sanity < 0:
 		return "At the end of work you felt really bad about the day you had, and you left feeling completely unfulfilled. "
-	elif satisfaction >= 0 and satisfaction <= 10:
+	elif sanity >= 0 and sanity <= 10:
 		return "At the end of work you felt okay about the day you had. You could have felt a bit more fulfilled, but you also could have felt a lot worse. "
 	else:
 		return "You felt great about your day today, and were as satisfied with your life as a person could be. "
 
 
 func _perf_text():
-	var performance = GameState.performance
-	if performance < 0:
+	var happiness = GameState.happiness
+	if happiness < 0:
 		return "You performed terribly at work. Maybe it's time to start refreshing the resume... "
-	elif performance >= 0 and performance <= 20:
+	elif happiness >= 0 and happiness <= 20:
 		return "You performed solidly at work. You may not be the star of the office, but you won't have to worry about your job anytime soon. "
 	else:
-		return "Your performance at work was legendary! Everyone in the office admired your work ethic. "
+		return "Your happiness at work was legendary! Everyone in the office admired your work ethic. "
 
 
 func _work_text():
-	var performance = GameState.performance
+	var happiness = GameState.happiness
 	var s = ""
 	if (
 		GameState.completed["pitch-manager"]
-		and GameState.completed["present"] and performance >= 20
+		and GameState.completed["present"] and happiness >= 20
 	):
 		s += "At the end of the day your boss called you in and praised the ideas that you pitched to your manager. "
 		if GameState.completed["write-proposal"]:
@@ -64,14 +64,14 @@ func _work_text():
 				s += "Even your manager came! "
 	else:
 		s += "At the end of the day your manager called you over and berated you in front of everyone for skipping the big presentation that she messaged you about. "
-		if performance < 10:
-			s += "Unfortunately, your performance at work was not enough to save you and she fired you on the spot. "
+		if happiness < 10:
+			s += "Unfortunately, your happiness at work was not enough to save you and she fired you on the spot. "
 			if GameState.completed["respond-groupchat"]:
 				"You left work and went out with your coworkers to mourn your job. "
 			elif GameState.completed["call-mom"]:
 				"You left work and went to dinner with your mom to mourn your job. "
 		else:
-			s += "Luckily for you, your performance at work was enough to save you this time... You might not be as fortunate in the future. "
+			s += "Luckily for you, your happiness at work was enough to save you this time... You might not be as fortunate in the future. "
 			if GameState.completed["respond-groupchat"]:
 				"You left work and went out with your coworkers to finish up the day. "
 			elif GameState.completed["call-mom"]:
@@ -81,10 +81,10 @@ func _work_text():
 
 
 func _tidy_text():
-	var tidiness = GameState.tidiness
-	if tidiness < -2:
+	var stress = GameState.stress
+	if stress < -2:
 		return "You got home to a filthy apartment, "
-	elif tidiness >= -2 and tidiness <= 4:
+	elif stress >= -2 and stress <= 4:
 		return "Your apartment was just clean enough to feel comfortable, "
 	else:
 		return "Your apartment was immaculate when you got home, "

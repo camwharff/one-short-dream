@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cv62wp4oy27ba" path="res://scenes/ui/hud.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bcsv3e4ovrxru" path="res://scenes/phase.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dqthru4nwxssn" path="res://scenes/ui/menu.tscn" id="3_efxa6"]
-[ext_resource type="AudioStream" uid="uid://b7vas6a6x3mve" path="res://assets/audio/Long Stroll.mp3" id="4_dg77c"]
+[ext_resource type="AudioStream" uid="uid://byiqal6xa7snm" path="res://assets/audio/Mesmerizing Galaxy Loop.mp3" id="4_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://scenes/rooms.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://6buicxxj4a1p" path="res://puzzles/minesweeper/minesweeper.tscn" id="7_choun"]
@@ -21,7 +21,7 @@ visible = false
 [node name="Menu" parent="." unique_id=1192830433 instance=ExtResource("3_efxa6")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1980941736]
-stream = ExtResource("4_dg77c")
+stream = ExtResource("4_ya4ey")
 volume_db = 5.0
 autoplay = true
 parameters/looping = true

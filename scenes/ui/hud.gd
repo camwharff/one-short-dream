@@ -13,9 +13,9 @@ signal click_sound
 @onready var hover_text: Label = $Display/HoverBox/HoverCols/HoverText
 @onready var final_score: Label = $EndScreen/StatsBG/Stats/TotalScore/Score
 @onready var final_energy: Label = $EndScreen/StatsBG/Stats/FinalStats/Energy/Score
-@onready var final_sat: Label = $EndScreen/StatsBG/Stats/FinalStats/Satisfaction/Score
-@onready var final_perf: Label = $EndScreen/StatsBG/Stats/FinalStats/Performance/Score
-@onready var final_tidy: Label = $EndScreen/StatsBG/Stats/FinalStats/Tidiness/Score
+@onready var final_sat: Label = $EndScreen/StatsBG/Stats/FinalStats/Sanity/Score
+@onready var final_perf: Label = $EndScreen/StatsBG/Stats/FinalStats/Happiness/Score
+@onready var final_tidy: Label = $EndScreen/StatsBG/Stats/FinalStats/Stress/Score
 @onready var final_description: Label = $EndScreen/StatsBG/Stats/Description
 
 @onready var up_icon: TextureRect = $Display/HoverBox/HoverCols/UpIcon/Icon
@@ -40,10 +40,10 @@ func _ready():
 
 var icons: Dictionary = {
 	"time": load("res://assets/icons/clock.png"),
-	"performance": load("res://assets/icons/graph.png"),
+	"happiness": load("res://assets/icons/smile.png"),
 	"energy": load("res://assets/icons/sleep.png"),
-	"satisfaction": load("res://assets/icons/smile.png"),
-	"tidiness": load("res://assets/icons/trash.png"),
+	"stress": load("res://assets/icons/graph.png"),
+	"sanity": load("res://assets/icons/trash.png"),
 }
 
 
