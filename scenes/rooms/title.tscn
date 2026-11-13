@@ -12,16 +12,16 @@ size = Vector2(740, 198)
 script = ExtResource("1_yo48d")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2043512267]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.5, 0.5)
+offset_right = 2915.0
+offset_bottom = 1640.0
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("1_kpexm")
 
 [node name="StartButton" type="Area2D" parent="." unique_id=2050105803]
 
 [node name="Sprite2D" type="Sprite2D" parent="StartButton" unique_id=1961112547]
-position = Vector2(729, 410)
-scale = Vector2(0.5, 0.5)
+position = Vector2(963, 542.00006)
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("2_3xoar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton" unique_id=1507043150]
@@ -30,12 +30,12 @@ position = Vector2(729, 346)
 shape = SubResource("RectangleShape2D_g61v0")
 
 [node name="HoverLabel" type="Label" parent="." unique_id=1400755050]
-visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 227.0
 offset_bottom = 84.0
 theme = ExtResource("4_mom7w")
+theme_override_font_sizes/font_size = 32
 text = "Click to Start"
 
 [connection signal="input_event" from="StartButton" to="." method="_on_input_event"]

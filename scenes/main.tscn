@@ -62,6 +62,8 @@ z_index = 10
 script = ExtResource("7_ya4ey")
 
 [node name="Minesweeper" parent="Puzzles" unique_id=1371722102 instance=ExtResource("7_choun")]
+layer = 2
+visible = false
 
 [connection signal="advance_phase" from="HUD" to="." method="_on_hud_advance_phase"]
 [connection signal="click_sound" from="HUD" to="." method="_play_click_audio"]
